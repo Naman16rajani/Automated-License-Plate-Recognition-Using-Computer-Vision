@@ -1,35 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Automated License Plate Recognition Tutorial</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Header and Navigation -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="challenges.html">Challenges</a></li>
-                <li><a href="applications.html">Applications</a></li>
-                <li><a href="future.html">Future</a></li>
-                <li><a href="bibliography.html">Annotated Bibliography</a></li>
-            </ul>
-        </nav>
+      <h2 class="heading-text">Automated License Plate Recognition by Naman Rajani</h2>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="challenges.html">Challenges</a></li>
+          <li><a href="applications.html">Applications</a></li>
+          <li><a href="future.html">Future</a></li>
+          <li><a href="bibliography.html">Bibliography</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+      </nav>
     </header>
+
+    <!-- Main Content -->
     <main>
-        <section id="intro">
-            <h1>Welcome to the ALPR Tutorial</h1>
-            <p>This tutorial will guide you through the basics and challenges of Automated License Plate Recognition using Computer Vision techniques.</p>
-        </section>
-        <section id="content">
-            <h2>What is ALPR?</h2>
-            <p>Automated License Plate Recognition (ALPR) uses computer vision to detect and recognize vehicle license plates in real-time.</p>
-        </section>
+      <!-- Introduction Section -->
+      <section id="intro">
+        <h1>
+          Welcome to the Automated License Plate Recognition (ALPR) Tutorial
+        </h1>
+        <p>
+          This tutorial provides an in-depth look into Automated License Plate
+          Recognition (ALPR) systems, their underlying technologies, and
+          applications in real-world environments.
+        </p>
+      </section>
+      <section id="live-demo">
+        <h2>Live Demo</h2>
+
+        <video width="600" controls>
+          <source src="/video/video1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </section>
+      <!-- ALPR Overview Section -->
+      <section id="overview">
+        <h2>What is ALPR?</h2>
+        <p>
+          ALPR (Automated License Plate Recognition) is a technology that uses
+          image processing and Optical Character Recognition (OCR) to detect and
+          recognize vehicle license plates. ALPR is widely used in traffic
+          management, toll collection, law enforcement, and parking systems.
+        </p>
+        <img src="images/alpr_example.png" alt="Example of ALPR System" />
+      </section>
+
+      <!-- How ALPR Works Section -->
+      <section id="how-it-works">
+        <h2>How Does ALPR Work?</h2>
+        <p>An ALPR system typically follows these steps:</p>
+        <ol>
+          <li>
+            <strong>Image Capture:</strong> High-resolution cameras capture
+            images or video streams of vehicles.
+          </li>
+          <li>
+            <strong>Preprocessing:</strong> The images undergo noise reduction
+            and grayscale conversion to enhance clarity.
+          </li>
+          <li>
+            <strong>License Plate Detection:</strong> Using algorithms like
+            contour detection, the region of the license plate is identified.
+          </li>
+          <li>
+            <strong>Character Segmentation:</strong> Characters on the plate are
+            segmented using thresholding techniques.
+          </li>
+          <li>
+            <strong>Character Recognition:</strong> Optical Character
+            Recognition (OCR) tools like Tesseract are used to recognize the
+            characters on the license plate.
+          </li>
+        </ol>
+        <img src="images/alpr_process.png" alt="ALPR Process Overview" />
+      </section>
+      <section id="character-recognition">
+        <h2>Character Recognition in ALPR</h2>
+        <p>
+          Character recognition is a vital component of Automated License Plate
+          Recognition (ALPR) systems, enabling the conversion of images of
+          license plate characters into machine-readable text using Optical
+          Character Recognition (OCR). Here’s a concise overview of the process:
+        </p>
+        <h3>1. Image Acquisition</h3>
+        <ul>
+          <li>
+            <strong>Camera Capture:</strong> High-quality images of vehicles are
+            captured using visible light or infrared cameras.
+          </li>
+          <li>
+            <strong>Preprocessing:</strong> The captured image is converted to
+            grayscale, noise is reduced, and edge detection is applied to
+            enhance clarity.
+          </li>
+        </ul>
+
+        <h3>2. License Plate Detection</h3>
+        <ul>
+          <li>
+            <strong>Contour Detection:</strong> Edge detection identifies
+            contours that may correspond to a license plate, filtering based on
+            shape and size.
+          </li>
+          <li>
+            <strong>Segmentation:</strong> The detected plate is cropped from
+            the background for further processing.
+          </li>
+        </ul>
+
+        <h3>3. Character Segmentation</h3>
+        <ul>
+          <li>
+            <strong>Thresholding:</strong> The segmented plate image is
+            converted to a binary format to isolate individual characters.
+          </li>
+          <li>
+            <strong>Bounding Boxes:</strong> Each character is enclosed in a
+            bounding box for recognition.
+          </li>
+        </ul>
+
+        <h3>4. Character Recognition Using OCR</h3>
+        <ul>
+          <li>
+            <strong>Feature Extraction:</strong> The OCR engine analyzes pixel
+            patterns within each character's bounding box.
+          </li>
+          <li>
+            <strong>Pattern Recognition:</strong> Extracted features are
+            compared against a database of known characters using machine
+            learning algorithms.
+          </li>
+          <li>
+            <strong>Post-processing:</strong> Error correction techniques
+            improve accuracy by applying rules based on expected license plate
+            formats.
+          </li>
+        </ul>
+
+        <h3>5. Challenges</h3>
+        <ul>
+          <li>
+            <strong>Lighting Variability:</strong> Changes in light can affect
+            recognition accuracy.
+          </li>
+          <li>
+            <strong>Motion Blur:</strong> Fast-moving vehicles may lead to
+            unclear images.
+          </li>
+          <li>
+            <strong>Non-Standard Fonts:</strong> Variations in font styles can
+            complicate recognition.
+          </li>
+        </ul>
+
+        <h3>6. Advanced Techniques</h3>
+        <ul>
+          <li>
+            <strong>Deep Learning:</strong> Utilizing Convolutional Neural
+            Networks (CNNs) for enhanced feature learning and improved
+            recognition accuracy.
+          </li>
+        </ul>
+        <img
+          src="images/alpr_char_recogination.png"
+          alt="alpr_char_recogination"
+        />
+      </section>
+      <!-- Challenges Section -->
+      <section id="challenges">
+        <h2>Challenges in ALPR</h2>
+        <p>Despite its widespread use, ALPR faces various challenges:</p>
+        <ul>
+          <li>Poor lighting conditions (nighttime, shadows, etc.)</li>
+          <li>Motion blur caused by fast-moving vehicles</li>
+          <li>Non-standard license plate designs</li>
+          <li>Weather-related issues like rain, fog, and snow</li>
+        </ul>
+      </section>
+
+      <!-- Applications Section -->
+      <section id="applications">
+        <h2>Applications of ALPR</h2>
+        <p>ALPR is widely implemented in the following areas:</p>
+        <ul>
+          <li>
+            <strong>Law Enforcement:</strong> Tracking stolen vehicles,
+            identifying toll evaders, etc.
+          </li>
+          <li>
+            <strong>Parking Management:</strong> Monitoring the entry and exit
+            of vehicles in parking lots.
+          </li>
+          <li>
+            <strong>Toll Collection:</strong> Automatically charging vehicles
+            that pass through toll booths.
+          </li>
+        </ul>
+      </section>
     </main>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Naman Rajani</p>
+      <p>&copy; 2024 Naman Rajani - ALPR Tutorial</p>
     </footer>
-</body>
+  </body>
 </html>
